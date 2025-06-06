@@ -1,27 +1,98 @@
 <html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {
-        'packages':['geochart'],
-      });
-      google.charts.setOnLoadCallback(drawRegionsMap);
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load("current", {
+                packages: ["geochart"],
+            });
+            google.charts.setOnLoadCallback(drawRegionsMap);
 
-      function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-          ['Country', 'Popularity'],
-          ['Germany', 200]
-        ]);
+            function drawRegionsMap() {
+                var data = google.visualization.arrayToDataTable([
+                    ["Country"],
+                    ["Canada"],
+                    ["United States"],
+                    ["United Kingdom"],
+                    ["Belarus"],
+                    ["Uzbekistan"],
+                    ["Azerbaijan"],
+                    ["Pakistan"],
+                    ["India"],
+                    ["Nepal"],
+                    ["Egypt"],
+                    ["Eritrea"],
+                    ["Ethiopia"],
+                    ["Kenya"],
+                    ["Uganda"],
+                    // ["Democratic Republic of the Congo"],
+                    // ["Congo [DRC]"],
+                    // ["Congo (Republic)"],
+                    ["Gabon"],
+                    ["Nigeria"],
+                    ["Ghana"],
+                    ["Liberia"],
+                    ["Sierra Leone"],
+                    ["Zambia"],
+                    ["Botswana"],
+                    ["Zimbabwe"],
+                    ["Mozambique"],
+                    ["Yemen"],
 
-        var options = {};
+                    ["Oman"],
+                    ["Swaziland"],
+                    ["Bangladesh"],
+                    ["American Samoa"],
+                    ["Bahamas"],
+                    ["Barbados"],
+                    ["Belize"],
+                    ["Bermuda"],
+                    ["Myanmar"],
+                    ["Cayman Islands"],
+                    ["Comoros"],
+                    ["Cook Islands"],
+                    ["Dominica"],
+                    ["Gambia"],
+                    ["Grenada"],
+                    ["Guam"],
+                    ["Jamaica"],
+                    ["Laos"],
+                    ["Malawi"],
+                    ["Malaysia"],
+                    ["Maldives"],
+                    ["Isle of Man"],
+                    ["Marshall Islands"],
+                    ["Micronesia"],
+                    ["Niue"],
+                    ["Northern Mariana Islands"],
+                    ["Puerto Rico"],
+                    ["Saint Kitts and Nevis"],
+                    ["Saint Lucia"],
+                    ["Saint Vincent and the Grenadines"],
+                    ["Seychelles"],
+                    ["Singapore"],
+                    ["Solomon Islands"],
+                    ["Tonga"],
+                    ["Trinidad and Tobago"],
+                    ["Turks and Caicos Islands"],
+                    ["Tuvalu"],
+                    ["British Virgin Islands"],
+                ]);
 
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+                var options = {
+                    tooltip: { isHTML: true },
+                    displayMode: "auto",
+                    enableRegionInteractivity: true,
+                    magnifyingGlass: { enable: true, zoomFactor: 5.0 },
+                };
+                // options["dataMode"] = "regions";
 
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="regions_div" style="width: 900px; height: 500px;"></div>
-  </body>
+                var chart = new google.visualization.GeoChart(document.getElementById("regions_div"));
+
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="regions_div" style="width: 100%; height: 100%"></div>
+    </body>
 </html>
