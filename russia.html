@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load("current", {
+                packages: ["geochart"],
+            });
+            google.charts.setOnLoadCallback(drawRegionsMap);
+
+            function drawRegionsMap() {
+                var data = google.visualization.arrayToDataTable([
+                    ["Country"],
+                    ["Russia"],
+                ]);
+
+                var options = {
+                    tooltip: { isHTML: true },
+                    displayMode: "auto",
+                    enableRegionInteractivity: true,
+                    magnifyingGlass: { enable: true, zoomFactor: 5.0 },
+                };
+                // options["dataMode"] = "regions";
+
+                var chart = new google.visualization.GeoChart(document.getElementById("regions_div"));
+
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="regions_div" style="width: 100%; height: 100%"></div>
+    </body>
+</html>
